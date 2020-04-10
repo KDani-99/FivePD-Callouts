@@ -6,4 +6,4 @@
 
 You can submit your callout to be included in FivePD as a default callout.
 
-To submit your callout, create a** new pull request.**
+To submit your callout, create a **new pull request.**
