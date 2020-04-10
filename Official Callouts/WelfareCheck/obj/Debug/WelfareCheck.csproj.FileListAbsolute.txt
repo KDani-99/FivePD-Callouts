@@ -1,0 +1,6 @@
+D:\Work\fivem\FivePD-API\Callouts\_output\WelfareCheck.net.dll
+D:\Work\fivem\FivePD-API\Callouts\_output\WelfareCheck.net.pdb
+D:\Work\fivem\FivePD-API\Callouts\WelfareCheck\obj\Debug\WelfareCheck.csprojAssemblyReference.cache
+D:\Work\fivem\FivePD-API\Callouts\WelfareCheck\obj\Debug\WelfareCheck.csproj.CoreCompileInputs.cache
+D:\Work\fivem\FivePD-API\Callouts\WelfareCheck\obj\Debug\WelfareCheck.net.dll
+D:\Work\fivem\FivePD-API\Callouts\WelfareCheck\obj\Debug\WelfareCheck.net.pdb
