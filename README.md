@@ -1,5 +1,5 @@
-<p align="center" style=";height:320px">
-  <img src="https://i.imgur.com/neODTEq.png" width="640" />
+<p align="center" style=";height:210px">
+  <img src="https://i.imgur.com/neODTEq.png" width="420" />
 </p>
 
 ### Community Callouts
