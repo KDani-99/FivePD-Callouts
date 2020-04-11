@@ -49,16 +49,9 @@ namespace ParkingViolation
 
             if (Game.Player.Character.Position.DistanceToSquared(Location) <= 10f)
             {
-                Notify("~b~Write the vehicle a citation, then tow it away!");
+                DisplayHelpTextThisFrame("~b~Write the vehicle a citation, then tow it away!", false);
                 Wait(5000);
             }
-        }
-
-        private void Notify(string message)
-        {
-            SetNotificationTextEntry("STRING");
-            AddTextComponentString(message);
-            DrawNotification(false, false);
         }
     }
 }

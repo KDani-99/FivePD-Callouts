@@ -9,7 +9,7 @@ using CalloutAPI;
 
 namespace DomesticDispute
 {
-    [CalloutProperties("DomesticDispute", "NorthCam18", "1.0", Callout.Probability.Medium)]
+    [CalloutProperties("DomesticDispute", "NorthCam18", "1.0", Probability.Medium)]
     public class DomesticDispute : CalloutAPI.Callout
     {
         Ped suspect, victim;
@@ -19,12 +19,11 @@ namespace DomesticDispute
             float offsetX = random.Next(100, 800);
             float offsetY = random.Next(100, 800);
 
-            InitBase(World.GetNextPositionOnStreet(Game.PlayerPed.GetOffsetPosition(new Vector3(offsetX, offsetY, 0))));
+            InitBase(World.GetNextPositionOnSidewalk(Game.PlayerPed.GetOffsetPosition(new Vector3(offsetX, offsetY, 0))));
 
             this.ShortName = "Domestic Dispute";
             this.CalloutDescription = "Neighbours have reported loud screaming and fighting at the residence! Things are heating up, get there quick!";
             this.ResponseCode = 3;
-
             this.StartDistance = 30f;
         }
 
@@ -45,7 +44,7 @@ namespace DomesticDispute
         {
             base.OnStart(player);
 
-            if(Game.Player.Character.Position.DistanceToSquared(Location) <= 10f)
+            if (Game.Player.Character.Position.DistanceToSquared(Location) <= 10f)
             {
                 Notify("~r~[SUSPECT] Well you never cleaned up the house when I told you to!");
                 Wait(5000);
