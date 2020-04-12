@@ -20,7 +20,7 @@ namespace ParkingViolation
             float offsetX = random.Next(100, 1000);
             float offsetY = random.Next(100, 1000);
 
-            InitBase(World.GetNextPositionOnSidewalk(Game.PlayerPed.GetOffsetPosition(new Vector3(offsetX, offsetY, 0))));
+            InitBase(World.GetNextPositionOnStreet(Game.PlayerPed.GetOffsetPosition(new Vector3(offsetX, offsetY, 0))));
 
             this.ShortName = "Parking Violation";
             this.CalloutDescription = "Caller reported a vehicle parked illegally, respond and take care of it!";
@@ -54,10 +54,17 @@ namespace ParkingViolation
         {
             if (Game.Player.Character.Position.DistanceToSquared(Location) <= 10f)
             {
-                DisplayHelpTextThisFrame("~b~Write the vehicle a citation, then tow it away!", false);
+                Notify($"~b~Write the vehicle a citation, then tow it away!");
                 Wait(5000);
             }
             await BaseScript.Delay(100);
+        }
+
+        private void Notify(string message)
+        {
+            SetNotificationTextEntry("STRING");
+            AddTextComponentString(message);
+            DrawNotification(false, false);
         }
     }
 }
