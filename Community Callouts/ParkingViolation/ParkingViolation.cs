@@ -47,11 +47,17 @@ namespace ParkingViolation
         {
             base.OnStart(player);
 
+            Tick += Update;
+        }
+
+        private async Task Update()
+        {
             if (Game.Player.Character.Position.DistanceToSquared(Location) <= 10f)
             {
                 DisplayHelpTextThisFrame("~b~Write the vehicle a citation, then tow it away!", false);
                 Wait(5000);
             }
+            await BaseScript.Delay(100);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace DomesticDispute
             float offsetX = random.Next(100, 800);
             float offsetY = random.Next(100, 800);
 
-            InitBase(World.GetNextPositionOnSidewalk(Game.PlayerPed.GetOffsetPosition(new Vector3(offsetX, offsetY, 0))));
+            InitBase(World.GetNextPositionOnStreet(Game.PlayerPed.GetOffsetPosition(new Vector3(offsetX, offsetY, 0))));
 
             this.ShortName = "Domestic Dispute";
             this.CalloutDescription = "Neighbours have reported loud screaming and fighting at the residence! Things are heating up, get there quick!";
@@ -44,6 +44,11 @@ namespace DomesticDispute
         {
             base.OnStart(player);
 
+            Tick += Update;
+        }
+
+        private async Task Update()
+        {
             if (Game.Player.Character.Position.DistanceToSquared(Location) <= 10f)
             {
                 Notify("~r~[SUSPECT] Well you never cleaned up the house when I told you to!");
@@ -56,6 +61,7 @@ namespace DomesticDispute
                 suspect.Task.FightAgainst(victim);
                 victim.Task.ReactAndFlee(suspect);
             }
+            await BaseScript.Delay(100);
         }
 
         private void Notify(string message)
